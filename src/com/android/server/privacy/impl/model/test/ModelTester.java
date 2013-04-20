@@ -7,6 +7,7 @@ import java.io.File;
 import com.android.server.privacy.impl.model.ConfigModel;
 import com.android.server.privacy.impl.model.PackageConfig;
 
+// standalone test class
 public class ModelTester {
 
 	public static void main(String[] args) throws Exception {
