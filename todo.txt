@@ -1,0 +1,2 @@
+E/JavaBinder(  444): java.lang.NoSuchMethodError: android.app.IActivityManager.killApplicationWithUid
+E/JavaBinder(  444):    at com.android.server.privacy.impl.ConfigServer.setRevokedPermissions(ConfigServer.java:84)

@@ -1,0 +1,10 @@
+rm -rf tmp
+mkdir tmp
+dx --dex --verbose --output=tmp/classes.dex bin
+mkdir -p tmp/META-INF
+echo 'PrivacyManager-SPI: com.android.server.privacy.impl.PrivacyManagerImpl' > tmp/META-INF/MANIFEST.MF
+rm -f PrivacyManager.apk
+aapt p -v -F PrivacyManager.apk tmp
+
+adb push PrivacyManager.apk /sdcard/PrivacyManager.apk
+adb shell su -c 'mkdir -p /data/privacy ; cp /sdcard/PrivacyManager.apk /data/system/PrivacyManager.apk ; mv /data/system/PrivacyManager.apk /data/privacy/PrivacyManager.apk ; date > /data/privacy/dummy'
